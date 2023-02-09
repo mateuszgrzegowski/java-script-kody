@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dokument</title>
+    </head>
+        <body>
+            <p>
+                Wiersze:<input type="text" id="row">
+            </p>
+                <p>
+                    Kolumny:<input type="text" id="col">
+                </p>
+              <p>
+                  <button onlick="pobierz()">Wykonaj tabelkę</button>
+              </p>
+              <div id="tabelka"></div>
+                <script>
+                      function tabelka(row,col) {
+                          let res = '<table border=1>';
+                            for (let i=0; i<row; i++) {
+                                res += '<tr>';
+                                for (let j=0; j<col; j++) {
+                                   let tmp = '<td>' + (i+1) + ',' + (j+1) + '</td>';
+                                res += tmp;
+                            }
+                            res += '</tr>';
+                        }
+                            res += '</table>';
+                            return res;
+                      }
+                      //console.log(tabelka(4,5));
+
+                      function pobierz() {
+                          const row = parseInt.getElementById('row').value;
+                          const col = parseInt.getElementById('col').value;
+                         
+                         document.getElementById('tabelka').innerHTML = tabelka(row,col);
+                          //console.log(tabelka(row,col));
+                          //document.write(tabelka(row,col));
+                          
+                        }
+                </script>
+        
+        </body>
+    
+</html>
